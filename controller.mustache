@@ -1,26 +1,56 @@
 /**
- * The {{{classname}}}Controller file is a very simple one, which does not need to be changed manually,
- * unless there's a case where business logic routes the request to an entity which is not
- * the service.
- * The heavy lifting of the Controller item is done in Request.js - that is where request
- * parameters are extracted and sent to the service, and where response is handled.
+ * {{classname}} Controller
+ * Generated from OpenAPI operations
  */
 
-const Controller = require('./Controller');
-const service = require('../services/{{{classname}}}Service');
+import Controller from './Controller.js';
+import {{classname}}Service from '../services/{{classname}}Service.js';
+
+export class {{classname}}Controller {
+  constructor() {
+    this.service = {{classname}}Service;
+  }
+
+  /**
+   * Get MCP tools for this controller
+   * Converts OpenAPI operations to MCP tools
+   */
+  getMCPTools() {
+    const tools = [];
+    
 {{#operations}}
 {{#operation}}
-const {{operationId}} = async (request, response) => {
-  await Controller.handleRequest(request, response, service.{{operationId}});
-};
+    // {{summary}} - {{httpMethod}} {{path}}
+    tools.push(Controller.createMCPTool(
+      "{{operationId}}",
+      {
+        title: "{{summary}}",
+        description: "{{summary}}{{#notes}} - {{notes}}{{/notes}}",
+        properties: {
+{{#allParams}}
+          {{paramName}}: {
+            type: "{{#isString}}string{{/isString}}{{#isInteger}}integer{{/isInteger}}{{#isLong}}integer{{/isLong}}{{#isFloat}}number{{/isFloat}}{{#isDouble}}number{{/isDouble}}{{#isBoolean}}boolean{{/isBoolean}}{{#isArray}}array{{/isArray}}{{#isObject}}object{{/isObject}}{{^isPrimitiveType}}string{{/isPrimitiveType}}",
+            description: "{{description}}"
+          }{{#hasMore}},{{/hasMore}}
+{{/allParams}}
+        },
+        required: [{{#requiredParams}}"{{paramName}}"{{#hasMore}}, {{/hasMore}}{{/requiredParams}}]
+      },
+      async (args) => {
+        try {
+          const result = await this.service.{{operationId}}(args);
+          return result;
+        } catch (error) {
+          return Controller.sendError(null, error);
+        }
+      }
+    ));
 
 {{/operation}}
 {{/operations}}
+    
+    return tools;
+  }
+}
 
-module.exports = {
-  {{#operations}}
-  {{#operation}}
-  {{operationId}},
-  {{/operation}}
-  {{/operations}}
-};
+export default new {{classname}}Controller();

@@ -1,11 +1,66 @@
-class Service {
+/**
+ * Base Service with MCP Response Formatting
+ */
+
+export class Service {
   static rejectResponse(error, code = 500) {
-    return { error, code };
+    return {
+      error: true,
+      code: code,
+      message: error.message || error
+    };
   }
 
   static successResponse(payload, code = 200) {
-    return { payload, code };
+    return {
+      success: true,
+      code: code,
+      payload: payload
+    };
   }
 }
 
-module.exports = Service;
+// MCP Response formatter
+export function formatResponse({ type = "success", message = "", data = null }) {
+  const response = { content: [] };
+
+  if (type === "error") {
+    response.content.push({
+      type: "text",
+      text: "❌ " + message
+    });
+  } else {
+    if (message) {
+      response.content.push({
+        type: "text",
+        text: "✅ " + message
+      });
+    }
+
+    if (data) {
+      let formattedData;
+      if (Array.isArray(data)) {
+        formattedData = data.length + " items:\n" + 
+          data.map((item, index) => {
+            if (typeof item === 'object') {
+              return (index + 1) + ". " + JSON.stringify(item, null, 2);
+            }
+            return (index + 1) + ". " + item;
+          }).join("\n");
+      } else if (typeof data === 'object') {
+        formattedData = JSON.stringify(data, null, 2);
+      } else {
+        formattedData = String(data);
+      }
+
+      response.content.push({
+        type: "text",
+        text: formattedData
+      });
+    }
+  }
+
+  return response;
+}
+
+export default Service;

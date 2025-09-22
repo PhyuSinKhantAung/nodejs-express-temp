@@ -1,49 +1,82 @@
-/* eslint-disable no-unused-vars */
-const Service = require('./Service');
+/**
+ * {{classname}} Service
+ * Generated from OpenAPI operations - contains actual API logic
+ */
 
+import { Service, formatResponse } from './Service.js';
+import { apiClient } from '../expressServer.js';
+import winston from 'winston';
+
+const logger = winston.createLogger({
+  level: process.env.LOG_LEVEL || 'info',
+  transports: [new winston.transports.Console()]
+});
+
+export class {{classname}}Service {
 {{#operations}}
 {{#operation}}
-/**
-{{#summary}}
-* {{{.}}}
-{{/summary}}
-{{#notes}}
-* {{{.}}}
-{{/notes}}
-*
-{{#allParams}}
-* {{paramName}} {{{dataType}}} {{{description}}}{{^required}} (optional){{/required}}
-{{/allParams}}
-{{^returnType}}
-* no response value expected for this operation
-{{/returnType}}
-{{#returnType}}
-* returns {{{.}}}
-{{/returnType}}
-* */
-const {{{operationId}}} = ({{#allParams}}{{#-first}}{ {{/-first}}{{paramName}}{{^-last}}, {{/-last}}{{#-last}} }{{/-last}}{{/allParams}}) => new Promise(
-  async (resolve, reject) => {
+
+  /**
+   * {{summary}}
+   * {{notes}}
+   * {{httpMethod}} {{path}}
+   */
+  static async {{operationId}}(args) {
     try {
-      resolve(Service.successResponse({
-    {{#allParams}}
-        {{paramName}},
-    {{/allParams}}
-      }));
-    } catch (e) {
-      reject(Service.rejectResponse(
-        e.message || 'Invalid input',
-        e.status || 405,
-      ));
+      let endpoint = "{{path}}";
+      const queryParams = {};
+      const bodyData = {};
+
+      // Handle path parameters
+{{#allParams}}
+{{#isPathParam}}
+      if (args.{{paramName}}) {
+        endpoint = endpoint.replace('{{{paramName}}}', encodeURIComponent(args.{{paramName}}));
+      }
+{{/isPathParam}}
+{{#isQueryParam}}
+      if (args.{{paramName}} !== undefined) {
+        queryParams['{{paramName}}'] = args.{{paramName}};
+      }
+{{/isQueryParam}}
+{{#isBodyParam}}
+      if (args.{{paramName}} !== undefined) {
+        bodyData['{{paramName}}'] = args.{{paramName}};
+      }
+{{/isBodyParam}}
+{{/allParams}}
+
+      // Make API request
+      const requestOptions = {
+        method: '{{httpMethod}}',
+        endpoint: endpoint
+      };
+
+      if (Object.keys(queryParams).length > 0) {
+        requestOptions.queryParams = queryParams;
+      }
+
+      if (Object.keys(bodyData).length > 0) {
+        requestOptions.body = bodyData;
+      }
+
+      const response = await apiClient.request(requestOptions);
+
+      return formatResponse({
+        message: "{{summary}} completed successfully",
+        data: response
+      });
+
+    } catch (error) {
+      logger.error('Error in {{operationId}}:', error);
+      return formatResponse({
+        type: "error",
+        message: "{{summary}} failed: " + (error.message || JSON.stringify(error))
+      });
     }
-  },
-);
+  }
 {{/operation}}
 {{/operations}}
+}
 
-module.exports = {
-  {{#operations}}
-  {{#operation}}
-  {{operationId}},
-  {{/operation}}
-  {{/operations}}
-};
+export default {{classname}}Service;

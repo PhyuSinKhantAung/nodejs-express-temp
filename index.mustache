@@ -1,16 +1,82 @@
-const config = require('./config');
-const logger = require('./logger');
-const ExpressServer = require('./expressServer');
+#!/usr/bin/env node
+/**
+ * {{appName}} MCP Server
+ * {{appDescription}}
+ * Generated from OpenAPI specification using modified nodejs-express template
+ */
 
-const launchServer = async () => {
-  try {
-    this.expressServer = new ExpressServer(config.URL_PORT, config.OPENAPI_YAML);
-    this.expressServer.launch();
-    logger.info('Express server running');
-  } catch (error) {
-    logger.error('Express Server failure', error.message);
-    await this.close();
+import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
+import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js";
+import winston from 'winston';
+
+// Import all controllers (these will contain our MCP tools)
+import controllers from './controllers/index.js';
+import { formatResponse } from './services/Service.js';
+
+// Logger setup
+const logger = winston.createLogger({
+  level: process.env.LOG_LEVEL || 'info',
+  format: winston.format.combine(
+    winston.format.timestamp(),
+    winston.format.simple()
+  ),
+  transports: [
+    new winston.transports.Console(),
+    new winston.transports.File({ filename: 'mcp-server.log' })
+  ]
+});
+
+// Initialize MCP Server
+const server = new McpServer({
+  name: "{{packageName}}",
+  version: "{{appVersion}}"
+});
+
+// Extract tools from controllers and register them
+const tools = [];
+for (const controllerName in controllers) {
+  const controller = controllers[controllerName];
+  if (controller.getMCPTools) {
+    const controllerTools = controller.getMCPTools();
+    tools.push(...controllerTools);
   }
-};
+}
 
-launchServer().catch(e => logger.error(e));
+console.log('Found', tools.length, 'tools from controllers');
+
+// Register all MCP tools
+for (const tool of tools) {
+  server.registerTool(tool.name, tool.schema, tool.handler);
+  logger.info('Registered MCP tool: ' + tool.name);
+}
+
+const transport = new StdioServerTransport();
+
+async function main() {
+  try {
+    logger.info("{{appName}} MCP Server is connecting...");
+    await server.connect(transport);
+    logger.info("{{appName}} MCP Server connected successfully!");
+    logger.info("Available tools: " + tools.map(t => t.name).join(', '));
+  } catch (error) {
+    logger.error("Error occurred while trying to connect to server:", error);
+    process.exit(1);
+  }
+}
+
+// Graceful shutdown
+process.on('SIGINT', () => {
+  logger.info('Received SIGINT, shutting down gracefully');
+  process.exit(0);
+});
+
+process.on('SIGTERM', () => {
+  logger.info('Received SIGTERM, shutting down gracefully');
+  process.exit(0);
+});
+
+if (import.meta.url === 'file://' + process.argv[1]) {
+  main();
+}
+
+export default server;

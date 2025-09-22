@@ -1,0 +1,102 @@
+info: Registered MCP tool: apiV1EnvironmentsIdGET {"timestamp":"2025-09-22T07:11:27.438Z"}
+info: Registered MCP tool: apiV1EnvironmentsIdKeyDELETE {"timestamp":"2025-09-22T07:11:27.440Z"}
+info: Registered MCP tool: apiV1EnvironmentsIdPATCH {"timestamp":"2025-09-22T07:11:27.440Z"}
+info: Registered MCP tool: app {"timestamp":"2025-09-22T07:11:27.440Z"}
+info: Registered MCP tool: apps {"timestamp":"2025-09-22T07:11:27.440Z"}
+info: Registered MCP tool: config_vars {"timestamp":"2025-09-22T07:11:27.440Z"}
+info: Registered MCP tool: createApp {"timestamp":"2025-09-22T07:11:27.441Z"}
+info: Registered MCP tool: create_build {"timestamp":"2025-09-22T07:11:27.441Z"}
+info: Registered MCP tool: create_namespace {"timestamp":"2025-09-22T07:11:27.441Z"}
+info: Registered MCP tool: delete_config_var {"timestamp":"2025-09-22T07:11:27.441Z"}
+info: Registered MCP tool: delete_namespace {"timestamp":"2025-09-22T07:11:27.441Z"}
+info: Registered MCP tool: exec_dyno {"timestamp":"2025-09-22T07:11:27.441Z"}
+info: Registered MCP tool: list_dynos {"timestamp":"2025-09-22T07:11:27.441Z"}
+info: Registered MCP tool: me {"timestamp":"2025-09-22T07:11:27.442Z"}
+info: Registered MCP tool: namespace {"timestamp":"2025-09-22T07:11:27.442Z"}
+info: Registered MCP tool: namespaces {"timestamp":"2025-09-22T07:11:27.442Z"}
+info: Registered MCP tool: oidc_login {"timestamp":"2025-09-22T07:11:27.442Z"}
+info: Registered MCP tool: restart_all_dynos {"timestamp":"2025-09-22T07:11:27.442Z"}
+info: Registered MCP tool: restart_dynos {"timestamp":"2025-09-22T07:11:27.442Z"}
+info: Registered MCP tool: set_config_vars {"timestamp":"2025-09-22T07:11:27.442Z"}
+info: Registered MCP tool: team {"timestamp":"2025-09-22T07:11:27.442Z"}
+info: Registered MCP tool: teams {"timestamp":"2025-09-22T07:11:27.442Z"}
+info: Registered MCP tool: clearDomains {"timestamp":"2025-09-22T07:11:27.442Z"}
+info: Registered MCP tool: createDomain {"timestamp":"2025-09-22T07:11:27.442Z"}
+info: Registered MCP tool: listDomains {"timestamp":"2025-09-22T07:11:27.442Z"}
+info: Registered MCP tool: removeDomain {"timestamp":"2025-09-22T07:11:27.442Z"}
+info: Registered MCP tool: showDomain {"timestamp":"2025-09-22T07:11:27.442Z"}
+info: Registered MCP tool: updateDomain {"timestamp":"2025-09-22T07:11:27.442Z"}
+info: Registered MCP tool: get_pipeline {"timestamp":"2025-09-22T07:11:27.443Z"}
+info: Registered MCP tool: list_pipeline_apps {"timestamp":"2025-09-22T07:11:27.443Z"}
+info: Registered MCP tool: list_pipelines {"timestamp":"2025-09-22T07:11:27.443Z"}
+info: Build.io API V1 MCP Server is connecting... {"timestamp":"2025-09-22T07:11:27.443Z"}
+info: Build.io API V1 MCP Server connected successfully! {"timestamp":"2025-09-22T07:11:27.443Z"}
+info: Available tools: apiV1EnvironmentsIdGET, apiV1EnvironmentsIdKeyDELETE, apiV1EnvironmentsIdPATCH, app, apps, config_vars, createApp, create_build, create_namespace, delete_config_var, delete_namespace, exec_dyno, list_dynos, me, namespace, namespaces, oidc_login, restart_all_dynos, restart_dynos, set_config_vars, team, teams, clearDomains, createDomain, listDomains, removeDomain, showDomain, updateDomain, get_pipeline, list_pipeline_apps, list_pipelines {"timestamp":"2025-09-22T07:11:27.443Z"}
+info: Registered MCP tool: apiV1EnvironmentsIdGET {"timestamp":"2025-09-22T07:16:03.082Z"}
+info: Registered MCP tool: apiV1EnvironmentsIdKeyDELETE {"timestamp":"2025-09-22T07:16:03.085Z"}
+info: Registered MCP tool: apiV1EnvironmentsIdPATCH {"timestamp":"2025-09-22T07:16:03.085Z"}
+info: Registered MCP tool: app {"timestamp":"2025-09-22T07:16:03.085Z"}
+info: Registered MCP tool: apps {"timestamp":"2025-09-22T07:16:03.085Z"}
+info: Registered MCP tool: config_vars {"timestamp":"2025-09-22T07:16:03.085Z"}
+info: Registered MCP tool: createApp {"timestamp":"2025-09-22T07:16:03.085Z"}
+info: Registered MCP tool: create_build {"timestamp":"2025-09-22T07:16:03.086Z"}
+info: Registered MCP tool: create_namespace {"timestamp":"2025-09-22T07:16:03.086Z"}
+info: Registered MCP tool: delete_config_var {"timestamp":"2025-09-22T07:16:03.086Z"}
+info: Registered MCP tool: delete_namespace {"timestamp":"2025-09-22T07:16:03.086Z"}
+info: Registered MCP tool: exec_dyno {"timestamp":"2025-09-22T07:16:03.086Z"}
+info: Registered MCP tool: list_dynos {"timestamp":"2025-09-22T07:16:03.086Z"}
+info: Registered MCP tool: me {"timestamp":"2025-09-22T07:16:03.086Z"}
+info: Registered MCP tool: namespace {"timestamp":"2025-09-22T07:16:03.086Z"}
+info: Registered MCP tool: namespaces {"timestamp":"2025-09-22T07:16:03.087Z"}
+info: Registered MCP tool: oidc_login {"timestamp":"2025-09-22T07:16:03.087Z"}
+info: Registered MCP tool: restart_all_dynos {"timestamp":"2025-09-22T07:16:03.087Z"}
+info: Registered MCP tool: restart_dynos {"timestamp":"2025-09-22T07:16:03.087Z"}
+info: Registered MCP tool: set_config_vars {"timestamp":"2025-09-22T07:16:03.087Z"}
+info: Registered MCP tool: team {"timestamp":"2025-09-22T07:16:03.087Z"}
+info: Registered MCP tool: teams {"timestamp":"2025-09-22T07:16:03.087Z"}
+info: Registered MCP tool: clearDomains {"timestamp":"2025-09-22T07:16:03.087Z"}
+info: Registered MCP tool: createDomain {"timestamp":"2025-09-22T07:16:03.087Z"}
+info: Registered MCP tool: listDomains {"timestamp":"2025-09-22T07:16:03.087Z"}
+info: Registered MCP tool: removeDomain {"timestamp":"2025-09-22T07:16:03.087Z"}
+info: Registered MCP tool: showDomain {"timestamp":"2025-09-22T07:16:03.087Z"}
+info: Registered MCP tool: updateDomain {"timestamp":"2025-09-22T07:16:03.087Z"}
+info: Registered MCP tool: get_pipeline {"timestamp":"2025-09-22T07:16:03.087Z"}
+info: Registered MCP tool: list_pipeline_apps {"timestamp":"2025-09-22T07:16:03.087Z"}
+info: Registered MCP tool: list_pipelines {"timestamp":"2025-09-22T07:16:03.088Z"}
+info: Build.io API V1 MCP Server is connecting... {"timestamp":"2025-09-22T07:16:03.088Z"}
+info: Build.io API V1 MCP Server connected successfully! {"timestamp":"2025-09-22T07:16:03.088Z"}
+info: Available tools: apiV1EnvironmentsIdGET, apiV1EnvironmentsIdKeyDELETE, apiV1EnvironmentsIdPATCH, app, apps, config_vars, createApp, create_build, create_namespace, delete_config_var, delete_namespace, exec_dyno, list_dynos, me, namespace, namespaces, oidc_login, restart_all_dynos, restart_dynos, set_config_vars, team, teams, clearDomains, createDomain, listDomains, removeDomain, showDomain, updateDomain, get_pipeline, list_pipeline_apps, list_pipelines {"timestamp":"2025-09-22T07:16:03.088Z"}
+info: Registered MCP tool: apiV1EnvironmentsIdGET {"timestamp":"2025-09-22T07:24:57.021Z"}
+info: Registered MCP tool: apiV1EnvironmentsIdKeyDELETE {"timestamp":"2025-09-22T07:24:57.023Z"}
+info: Registered MCP tool: apiV1EnvironmentsIdPATCH {"timestamp":"2025-09-22T07:24:57.023Z"}
+info: Registered MCP tool: app {"timestamp":"2025-09-22T07:24:57.023Z"}
+info: Registered MCP tool: apps {"timestamp":"2025-09-22T07:24:57.023Z"}
+info: Registered MCP tool: config_vars {"timestamp":"2025-09-22T07:24:57.023Z"}
+info: Registered MCP tool: createApp {"timestamp":"2025-09-22T07:24:57.023Z"}
+info: Registered MCP tool: create_build {"timestamp":"2025-09-22T07:24:57.023Z"}
+info: Registered MCP tool: create_namespace {"timestamp":"2025-09-22T07:24:57.024Z"}
+info: Registered MCP tool: delete_config_var {"timestamp":"2025-09-22T07:24:57.024Z"}
+info: Registered MCP tool: delete_namespace {"timestamp":"2025-09-22T07:24:57.024Z"}
+info: Registered MCP tool: exec_dyno {"timestamp":"2025-09-22T07:24:57.024Z"}
+info: Registered MCP tool: list_dynos {"timestamp":"2025-09-22T07:24:57.024Z"}
+info: Registered MCP tool: me {"timestamp":"2025-09-22T07:24:57.024Z"}
+info: Registered MCP tool: namespace {"timestamp":"2025-09-22T07:24:57.025Z"}
+info: Registered MCP tool: namespaces {"timestamp":"2025-09-22T07:24:57.025Z"}
+info: Registered MCP tool: oidc_login {"timestamp":"2025-09-22T07:24:57.025Z"}
+info: Registered MCP tool: restart_all_dynos {"timestamp":"2025-09-22T07:24:57.025Z"}
+info: Registered MCP tool: restart_dynos {"timestamp":"2025-09-22T07:24:57.025Z"}
+info: Registered MCP tool: set_config_vars {"timestamp":"2025-09-22T07:24:57.025Z"}
+info: Registered MCP tool: team {"timestamp":"2025-09-22T07:24:57.025Z"}
+info: Registered MCP tool: teams {"timestamp":"2025-09-22T07:24:57.025Z"}
+info: Registered MCP tool: clearDomains {"timestamp":"2025-09-22T07:24:57.025Z"}
+info: Registered MCP tool: createDomain {"timestamp":"2025-09-22T07:24:57.025Z"}
+info: Registered MCP tool: listDomains {"timestamp":"2025-09-22T07:24:57.025Z"}
+info: Registered MCP tool: removeDomain {"timestamp":"2025-09-22T07:24:57.025Z"}
+info: Registered MCP tool: showDomain {"timestamp":"2025-09-22T07:24:57.026Z"}
+info: Registered MCP tool: updateDomain {"timestamp":"2025-09-22T07:24:57.026Z"}
+info: Registered MCP tool: get_pipeline {"timestamp":"2025-09-22T07:24:57.026Z"}
+info: Registered MCP tool: list_pipeline_apps {"timestamp":"2025-09-22T07:24:57.026Z"}
+info: Registered MCP tool: list_pipelines {"timestamp":"2025-09-22T07:24:57.026Z"}
+info: Build.io API V1 MCP Server is connecting... {"timestamp":"2025-09-22T07:24:57.026Z"}
+info: Build.io API V1 MCP Server connected successfully! {"timestamp":"2025-09-22T07:24:57.027Z"}
+info: Available tools: apiV1EnvironmentsIdGET, apiV1EnvironmentsIdKeyDELETE, apiV1EnvironmentsIdPATCH, app, apps, config_vars, createApp, create_build, create_namespace, delete_config_var, delete_namespace, exec_dyno, list_dynos, me, namespace, namespaces, oidc_login, restart_all_dynos, restart_dynos, set_config_vars, team, teams, clearDomains, createDomain, listDomains, removeDomain, showDomain, updateDomain, get_pipeline, list_pipeline_apps, list_pipelines {"timestamp":"2025-09-22T07:24:57.027Z"}
